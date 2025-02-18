@@ -1,4 +1,6 @@
 services:
+  dnmonster:
+    image: amouat/dnmonster:1.0
   identidock:
     build:
       context: .
@@ -9,3 +11,5 @@ services:
       ENV: DEV 
     volumes:
       - ./app:/app
+    links:
+      - dnmonster
